@@ -2,5 +2,6 @@ Utilities related to PyTorch. The code is really messy and originally written fo
 
 Currently contains:
 
-1. Merge multiple Torch Profiler traces from multiple ranks into one big trace (useful when checking cooperation between ranks).
-2. Extract kernel time breakdown statistics from profiles.
+1. **Universal Memory Profiler**: Like torch memory profiler, but can examine more low-level memory allocations, such as NCCL internal buffers. I personally used this to handle NCCL related memory issues.
+2. **Trace Merger**: Merge multiple Torch Profiler traces from multiple ranks into one big trace (useful when checking cooperation between ranks).
+3. **Kernel Stat Extractor**: Extract kernel time breakdown statistics from profiles.
