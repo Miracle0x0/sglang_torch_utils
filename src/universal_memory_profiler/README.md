@@ -9,7 +9,7 @@ Dependency:
 Compile:
 
 ```shell
-nvcc -Xcompiler -fPIC -shared -I/usr/include/python3.10 -o cupti_memory_profiler.so cupti_memory_profiler.cpp -lcupti -I/tmp/cpptrace-test/resources/include -L/tmp/cpptrace-test/resources/lib -lcpptrace -ldwarf -lz -lzstd -ldl
+nvcc -Xcompiler -fPIC -shared -I/usr/include/python3.10 -o _cupti_memory_profiler.so cupti_memory_profiler.cpp -lcupti -I/tmp/cpptrace-test/resources/include -L/tmp/cpptrace-test/resources/lib -lcpptrace -ldwarf -lz -lzstd -ldl
 ```
 
 Modify program (e.g. SGLang) to trigger the profiler (where you may copy-paste or import the `cupti_memory_profiler.py`):
