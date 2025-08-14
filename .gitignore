@@ -1,1 +1,9 @@
 .idea
+.vscode
+__pycache__
+
+profiles/
+
+.DS_Store
+uv.lock
+.python-version

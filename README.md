@@ -1,3 +1,5 @@
+> Revised from https://github.com/fzyzcjy/torch_utils
+
 Utilities related to PyTorch. The code is really messy and originally written for my personal usage, but open-source here since someone wants to use it.
 
 Currently contains:
