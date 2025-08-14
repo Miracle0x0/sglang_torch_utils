@@ -1,0 +1,17 @@
+[project]
+name = "torch-utils"
+version = "0.1.0"
+description = "Utility scripts for PyTorch (e.g. Memory profiler that understands more low-level allocations such as NCCL) Resources"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "orjson>=3.11.2",
+    "polars>=1.32.2",
+    "typer>=0.16.0",
+]
+
+[tool.pyright]
+typeCheckingMode = "off"
+
+[tool.ruff.lint]
+ignore = ["F401"]

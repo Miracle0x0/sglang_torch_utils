@@ -10,20 +10,20 @@ import typer
 
 
 def main(
-        filename: str,
-        dir_data: str = "/Users/tom/temp/temp_sglang_server2local",
+    filename: str,
+    dir_data: str = "/Users/march/tools/torch_utils/profiles",
 ):
     dir_data = Path(dir_data)
     path_input = dir_data / filename
     path_output = dir_data / f"perfetto-compatible-{filename}"
     print(f"{path_input=} {path_output=}")
 
-    with (gzip.open(path_input, 'rt', encoding='utf-8') as f):
+    with gzip.open(path_input, "rt", encoding="utf-8") as f:
         trace = orjson.loads(f.read())
-        output = {key: value for key, value in trace.items() if key != 'traceEvents'}
-        output['traceEvents'] = _process_events(trace.get('traceEvents', []))
+        output = {key: value for key, value in trace.items() if key != "traceEvents"}
+        output["traceEvents"] = _process_events(trace.get("traceEvents", []))
 
-    with gzip.open(path_output, 'wb') as f:
+    with gzip.open(path_output, "wb") as f:
         f.write(orjson.dumps(output))
 
 
