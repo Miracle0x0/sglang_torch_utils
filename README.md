@@ -10,3 +10,15 @@ Currently contains:
 4. When PDL is enabled, Perfetto will not render some overlapped events, which is fixed by convert_to_perfetto_compatible.py.
 5. PDL detector: show whether kernels have enabled PDL or not.
 6. Extract kernel time breakdown statistics (mean, std, etc) from profiles.
+
+If you are using [uv](https://docs.astral.sh/uv), feel free to use the `sgl_utils` script:
+
+```bash
+./sgl_utils --help
+```
+
+or
+
+```bash
+uv run sgl_utils.py --help
+```
