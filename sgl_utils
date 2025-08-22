@@ -23,7 +23,7 @@ profile_utils = typer.Typer()
 
 
 @profile_utils.command()
-def convert_to_perfetto_compatible(filepath: str):
+def convert(filepath: str):
     dir_data = os.path.dirname(filepath)
     filename = os.path.basename(filepath)
     path_input = os.path.join(dir_data, filename)
@@ -155,7 +155,7 @@ def _process_tp_events(events: List[Dict], config: Config, tp_rank: int):
 
 
 @profile_utils.command()
-def sglang_profiler_trace_merger(
+def merge(
     dir_data: str,
     profile_id: Optional[str] = None,
     start_time_ms: Optional[int] = 0,
