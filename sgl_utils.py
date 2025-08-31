@@ -83,7 +83,7 @@ def _merge_chrome_traces(
 def _handle_file(path, config: Config):
     print(f"=== handle_file START {path=}")
 
-    _get_tp_rank_of_path = lambda p: int(re.search("TP-(\d+)", p.name).group(1))  # noqa
+    _get_tp_rank_of_path = lambda p: int(re.search(r"TP-(\d+)", p.name).group(1))  # noqa
     tp_rank = _get_tp_rank_of_path(path)
 
     with gzip.open(path, "rt", encoding="utf-8") as f:
@@ -186,7 +186,7 @@ def merge(
         )
     print(f"{profile_id=}")
 
-    _get_tp_rank_of_path = lambda p: int(re.search("TP-(\d+)", p.name).group(1))  # noqa
+    _get_tp_rank_of_path = lambda p: int(re.search(r"TP-(\d+)", p.name).group(1))  # noqa
     interesting_paths = sorted(
         # [p for p in dir_data.glob("*.json.gz") if p.name.startswith(profile_id)],
         [p for p in dir_data.glob("*.json.gz") if p.name.startswith(profile_id)],
